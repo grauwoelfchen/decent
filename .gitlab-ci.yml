@@ -1,0 +1,91 @@
+stages:
+  # - sast
+  - vet
+  - test
+  - build
+
+.vet-tools: &vet-tools
+  image: grauwoelfchen/rust-vet-tools:stable
+  except:
+    - tags
+
+# TODO: Enable SAST check once Rust is supported
+# https://gitlab.com/groups/gitlab-org/-/epics/297
+# sast:
+#   stage: sast
+# include:
+#   - template: Security/SAST.gitlab-ci.yml
+
+check:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:check
+
+fmt:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo fmt --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:format
+
+lint:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo clippy --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:lint
+
+test:
+  stage: test
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make test
+  only:
+    - trunk
+    - merge_requests
+
+build-debug:
+  stage: build
+  image: grauwoelfchen/rust:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make build:debug
+  cache:
+    untracked: true
+  only:
+    - trunk
+    - merge_requests
+
+build-release:
+  stage: build
+  image: grauwoelfchen/rust:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make build:release
+  cache:
+    untracked: true
+  only:
+    - trunk
