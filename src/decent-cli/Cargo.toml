@@ -22,7 +22,8 @@ doc = false
 path = "src/main.rs"
 
 [dependencies]
-decent = { path = "../decent" }
+decent = "0.0.1"
+# decent = { path = "../decent" }
 
 [dev-dependencies.cargo-husky]
 version = "1"
