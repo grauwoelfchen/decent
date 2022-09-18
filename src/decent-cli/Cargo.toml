@@ -1,0 +1,30 @@
+[package]
+name = "decent-cli"
+version = "0.0.1"
+authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
+description = "A cli of decent"
+documentation = "https://gitlab.com/grauwoelfchen/decent"
+repository = "https://gitlab.com/grauwoelfchen/decent"
+homepage = "https://gitlab.com/grauwoelfchen/decent"
+readme = "README.md"
+keywords = ["cli", "text"]
+categories = ["command-line-utilities", "text-processing"]
+license = "LGPL-3.0-or-later"
+exclude = []
+edition = "2021"
+
+[badges]
+gitlab = { repository = "grauwoelfchen/decent", branch = "master" }
+
+[[bin]]
+name = "decent"
+doc = false
+path = "src/main.rs"
+
+[dependencies]
+decent = { path = "../decent" }
+
+[dev-dependencies.cargo-husky]
+version = "1"
+default-features = false
+features = ["user-hooks"]

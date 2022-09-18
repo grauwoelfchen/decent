@@ -1,0 +1,33 @@
+[package]
+name = "decent"
+version = "0.0.1"
+authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
+description = "An implementation of libdesync"
+documentation = "https://gitlab.com/grauwoelfchen/decent"
+repository = "https://gitlab.com/grauwoelfchen/decent"
+homepage = "https://gitlab.com/grauwoelfchen/decent"
+readme = "README.md"
+keywords = ["cli", "text"]
+categories = ["command-line-interface", "text-processing"]
+license = "LGPL-3.0-or-later"
+exclude = []
+edition = "2021"
+
+[badges]
+gitlab = { repository = "grauwoelfchen/decent", branch = "master" }
+
+
+[lib]
+name = "decent"
+path = "src/lib.rs"
+
+[dependencies]
+itertools = "0.10.4"
+lazy_static = "1.4.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies.cargo-husky]
+version = "1"
+default-features = false
+features = ["user-hooks"]

@@ -1,0 +1,2 @@
+blacklisted-names = ["foo", "baz", "quux"]
+type-complexity-threshold = 200 # default: 250
