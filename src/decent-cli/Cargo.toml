@@ -1,7 +1,7 @@
 [package]
 name = "decent-cli"
 version = "0.0.1"
-authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
+authors = ["Yasha <yasuhiro.asaka@grauwoelfchen.net>"]
 description = "A cli of decent"
 documentation = "https://gitlab.com/grauwoelfchen/decent"
 repository = "https://gitlab.com/grauwoelfchen/decent"

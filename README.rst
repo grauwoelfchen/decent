@@ -38,4 +38,4 @@ License
 .. code:: text
 
    Decent
-   Copyright (C) 2022 Yasuhiro Яша Asaka
+   Copyright (C) 2022-2025 Yasha
