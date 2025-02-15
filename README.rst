@@ -1,3 +1,17 @@
+..
+   RestructuredText: warning and note directives are not properly rendered #1682
+   https://github.com/github/markup/issues/1682
+
+.. note::
+   This repository has been moved. Please check the new locations below.
+
+   * `~grauwoelfchen/decent`_ on Sourcehut
+   * `grauwoelfchen/decent`_ on Codeberg
+
+.. _`~grauwoelfchen/decent`: https://git.sr.ht/~grauwoelfchen/decent
+.. _`grauwoelfchen/decent`: https://codeberg.org/grauwoelfchen/decent
+
+
 Decent
 ======
 
